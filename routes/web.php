@@ -9,3 +9,8 @@ Route::get('/', [LandingController::class, 'index']);
 Route::get('/', function () {
     return view('landing');
 });
+
+
+
+
+

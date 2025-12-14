@@ -2,44 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Landing Page</title>
     @vite('resources/css/app.css') {{-- Tailwind --}}
+
+    <style>
+        /* small helpers to better match the provided design */
+        .hero-container { max-width: 1100px; }
+        .rating-bubble { backdrop-filter: blur(6px); }
+    </style>
 </head>
 
 <body class="bg-black text-white">
 
     <!-- Background Wrapper -->
-    <div 
-        class="relative min-h-screen bg-cover bg-center bg-no-repeat"
-        style="background-image: url('{{ asset('images/image 85.png') }}');"
-    >
+    <div class="relative min-h-screen overflow-hidden bg-black">
 
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-black/70"></div>
+        <!-- Base background canvas -->
+        <div class="absolute inset-0 bg-black" style="z-index:0"></div>
+
+        <!-- Left and right hero images (image 87 on left, image 85 on right) -->
+        <img src="{{ asset('images/image 87.png') }}" alt="hero-left" class="pointer-events-none absolute left-0 top-0 h-full max-w-[48%] object-cover opacity-90" style="z-index:5">
+        <img src="{{ asset('images/image 85.png') }}" alt="hero-right" class="pointer-events-none absolute right-0 top-0 h-full max-w-[48%] object-cover opacity-90" style="z-index:5">
+
+        <!-- Stars / speck overlays (multiple layers for depth) -->
+        <img src="{{ asset('images/image.png') }}" alt="stars-1" class="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-25" style="z-index:9">
+        <img src="{{ asset('images/image (5).png') }}" alt="stars-2" class="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-20" style="z-index:9">
+
+        <!-- Decorative curve pieces (left / right) -->
+        <!-- <img src="{{ asset('images/Rounded rectangle (1).png') }}" alt="curve-left" class="pointer-events-none absolute left-0 top-1/4 w-40 md:w-72 opacity-95 -z-4 -translate-x-6">
+        <img src="{{ asset('images/Rounded rectangle.png') }}" alt="curve-right" class="pointer-events-none absolute right-0 bottom-1/6 w-40 md:w-96 opacity-95 -z-4 translate-x-6"> -->
+
+        <!-- Faint overlay to darken hero for readable text (below stars, above side images) -->
+        <div class="absolute inset-0" style="background-color: rgba(0,0,0,0.28); z-index:8"></div>
 
         <!-- Content -->
         <div class="relative z-10">
 
             <!-- Navbar -->
-            <nav class="flex items-center justify-between px-10 py-6">
-                <!-- <div class="text-xl font-bold ">LOGO</div> -->
-                <img src="{{ asset('images/Logo (1).png') }}" alt="Logo" class="h-8">
+            <nav class="px-6 py-6">
+                <div class="mx-auto hero-container flex items-center justify-between">
+                    <img src="{{ asset('images/Logo (1).png') }}" alt="Logo" class="h-8">
 
-                <ul class="hidden md:flex space-x-8 text-sm">
-                    <li>Home</li>
-                    <li>Services</li>
-                    <li>Contact Us</li>
-                    <li>About Us</li>
-                </ul>
+                    <ul class="hidden md:flex space-x-8 text-sm text-gray-200">
+                        <li class="hover:text-white">Home</li>
+                        <li class="hover:text-white">Services</li>
+                        <li class="hover:text-white">Contact us</li>
+                        <li class="hover:text-white">About us</li>
+                    </ul>
 
-                <button class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-md">
-                    Login
-                </button>
+                    <button class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-md text-sm">
+                        Login
+                    </button>
+                </div>
             </nav>
 
             <!-- Hero Section -->
-            <section class="flex items-center min-h-[80vh] px-10">
-                <div class="max-w-2xl">
+            <section class="flex items-center min-h-[80vh] px-6">
+                <div class="mx-auto hero-container">
+                    <div class="relative">
+                        <!-- small rating bubble over hero text -->
+                        <div class="absolute -top-8 right-0 hidden sm:flex items-center gap-3 px-4 py-2 rounded-full bg-black/50 text-sm text-white rating-bubble">
+                            <div class="flex -space-x-2">
+                                <img src="{{ asset('images/avatar1.png') }}" class="w-7 h-7 rounded-full border-2 border-black" alt="a">
+                                <img src="{{ asset('images/avatar2.png') }}" class="w-7 h-7 rounded-full border-2 border-black" alt="b">
+                                <img src="{{ asset('images/avatar3.png') }}" class="w-7 h-7 rounded-full border-2 border-black" alt="c">
+                            </div>
+                            <div class="text-xs text-gray-200">115+ happy clients</div>
+                        </div>
+
+                        <div class="max-w-2xl">
                     <h1 class="text-5xl font-bold leading-tight">
                         Automate <span class="text-orange-500">Intelligence.</span><br>
                         Accelerate Growth.
@@ -47,7 +79,8 @@
 
                     <p class="text-gray-300 mt-6">
                         Our AI-powered SaaS platform empowers businesses to streamline
-                        operations and make smarter decisions.
+                        operations, automate repetive tasks, and make smarter, data-driven
+                            decisions-all from one intuitive dashboard.
                     </p>
 
                     <div class="mt-8 flex gap-4">
@@ -57,6 +90,8 @@
                         <button class="border border-gray-500 px-6 py-3 rounded-md">
                             See Details
                         </button>
+                    </div>
+                </div>
                     </div>
                 </div>
             </section>
