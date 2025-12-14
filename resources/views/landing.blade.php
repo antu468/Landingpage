@@ -72,6 +72,64 @@
             font-size: 42px;
             font-weight: bold;
         }
+            /*frame with rounded corners and gradient background for rating bubble*/
+        .rating-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 30px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: linear-gradient( #FF541F21, #FF541F0A);
+           
+        }
+
+        .avatars {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatars img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+            
+            margin-left: -10px;
+        }
+
+        .avatars img:first-child {
+            margin-left: 0;
+        }
+
+        .rating-text {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* Navbar active underline */
+        .nav-item { position: relative; }
+        .nav-item.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -8px;
+            height: 4px;
+            background: #ff6a00;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(255,106,0,0.18);
+        }
+
+        .happy-badge {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 6px 12px;
+           
+        }
+
     </style>
 </head>
 
@@ -107,7 +165,7 @@
                     <img src="{{ asset('images/Logo (1).png') }}" alt="Logo" class="h-8">
 
                     <ul class="hidden md:flex space-x-8 text-sm text-gray-200">
-                        <li class="hover:text-white">Home</li>
+                        <li class="nav-item active text-white">Home</li>
                         <li class="hover:text-white">Services</li>
                         <li class="hover:text-white">Contact us</li>
                         <li class="hover:text-white">About us</li>
@@ -124,36 +182,55 @@
                 <div class="mx-auto hero-container">
                     <div class="relative">
                         <!-- small rating bubble over hero text -->
-                        <div class="absolute -top-8 right-0 hidden sm:flex items-center gap-3 px-4 py-2 rounded-full bg-black/50 text-sm text-white rating-bubble">
-                            <div class="flex -space-x-2">
-                                <img src="{{ asset('images/avatar1.png') }}" class="w-7 h-7 rounded-full border-2 border-black" alt="a">
-                                <img src="{{ asset('images/avatar2.png') }}" class="w-7 h-7 rounded-full border-2 border-black" alt="b">
-                                <img src="{{ asset('images/avatar3.png') }}" class="w-7 h-7 rounded-full border-2 border-black" alt="c">
+                        <div class="rating-pill">
+                            <div class="avatars">
+                                <img src="images/Container (4).png" alt="client">
+                                <img src="images/Container (3).png" alt="client">
+                                <img src="images/Container (2).png" alt="client">
+                                <img src="images/Container (1).png" alt="client">
+                                <img src="images/Container.png" alt="client">
                             </div>
-                            <div class="text-xs text-gray-200">115+ happy clients</div>
+
+                            <!-- Happy Clients Badge: stars above, text below -->
+                            <div class="happy-badge">
+                                <div class="flex gap-1">
+                                    @for ($i = 0; $i < 5; $i++)
+                                        <img 
+                                            src="{{ asset('images/Vector1.png') }}" 
+                                            alt="star"
+                                            class="w-4 h-4"
+                                        >
+                                    @endfor
+                                </div>
+
+                                <!-- Text directly under the stars -->
+                                <div class="text-sm font-medium text-orange-400">115+ happy clients</div>
+                            </div>
+
                         </div>
 
+
                         <div class="max-w-2xl">
-                    <h1 class="text-5xl font-bold leading-tight">
-                        Automate <span class="text-orange-500">Intelligence.</span><br>
-                        Accelerate Growth.
-                    </h1>
+                            <h1 class="text-5xl font-bold leading-tight items-center justify-between">
+                                Automate <span class="text-orange-500">Intelligence</span>.<br>
+                                    Accelerate Growth.
+                            </h1>
 
-                    <p class="text-gray-300 mt-6">
-                        Our AI-powered SaaS platform empowers businesses to streamline
-                        operations, automate repetive tasks, and make smarter, data-driven
-                        decisions-all from one intuitive dashboard.
-                    </p>
+                            <p class="text-gray-300 mt-6">
+                                Our AI-powered SaaS platform empowers businesses to streamline<br>
+                                operations, automate repetive tasks, and make smarter, data-driven<br>
+                                decisions-all from one intuitive dashboard.
+                            </p>
 
-                    <div class="mt-8 flex gap-4 items-center justify-center">
-                        <button class="bg-orange-500 px-10 py-3 rounded-md">
-                            Get Started
-                        </button>
-                        <button class="border border-gray-500 px-10 py-3 rounded-md">
-                            See Details
-                        </button>
-                    </div>
-                    </div>
+                            <div class="mt-8 flex gap-4 items-center justify-center">
+                                <button class="bg-orange-500 px-10 py-3 rounded-md">
+                                    Get Started
+                                </button>
+                                <button class="border border-gray-500 px-10 py-3 rounded-md">
+                                    See Details
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
