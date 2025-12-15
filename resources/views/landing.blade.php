@@ -187,6 +187,31 @@
         /* Heading font and size for features */
         .features-section h2 { font-size: 64px; line-height: 1; font-family: 'Sk-Modernist', Arial, Helvetica, sans-serif; }
 
+        /* Paragraph below the feature containers */
+        .features-section1 { position: relative; padding-top: 1.5rem; padding-bottom: 2rem; }
+
+        .features-section1 .lead {
+            font-family: 'Sk-Modernist', Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 27.98px;
+            line-height: 39.17px;
+            color: #ffffff;
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features-section1 .lead-year {
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            font-family: 'Sk-Modernist', Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #ffffff;
+            opacity: 0.95;
+        }
+
     </style>
 </head>
 
@@ -322,7 +347,8 @@
                                 Designed for Designers.<br>
                                 Powered by <span class="text-orange-500">AI.</span>
                             </h2>
-                            <p class="text-gray-300 mt-4">Unlock the full potential of your creativity with our AI-powered design assistant. Explore new dimensions of design.</p>
+                            <p class="text-gray-300 mt-4">Unlock the full potential of your creativity with our AI-powered design assistant.<br>
+                             Explore new dimensions of design.</p>
                         </div>
 
                         <!-- vector logo (PNG placed in public/images). Replace filename if different. -->
@@ -364,6 +390,14 @@
                             <div class="badge">➜</div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+
+            <section class="features-section1 px-6">
+                <div class="mx-auto hero-container relative">
+                    <div class="lead-year">2025</div>
+                    <p class="lead">Whether you're designing for personal projects, creative teams, or large-scale campaigns, our AI-powered platform is built to bring your ideas to life—quickly, beautifully, and intelligently. And the results? The numbers speak for themselves:</p>
                 </div>
             </section>
 
