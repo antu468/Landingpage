@@ -212,6 +212,40 @@
             opacity: 0.95;
         }
 
+        /* Numbers section styles */
+        .numbers-section { padding-top: 2.5rem; padding-bottom: 3rem; }
+        .numbers-container { max-width: 1200px; margin: 0 auto; }
+        .numbers-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; align-items: start; }
+
+        .numbers-col { position: relative; color: #fff; }
+        /* Alternate vertical positions: 1st top, 2nd down, 3rd top, 4th down */
+        .numbers-row .numbers-col:nth-child(odd) { transform: translateY(0); }
+        .numbers-row .numbers-col:nth-child(even) { transform: translateY(88px); }
+        .numbers-col .num { font-size: 67.15px; font-weight: 700; line-height: 1; }
+        .numbers-col .num-label { margin-top: 8px; font-size: 20px; font-weight: 600; }
+        .numbers-col .num-sub { margin-top: 6px; color: #cbd5e1; font-size: 14px; }
+
+        .line-wrap { position: relative; margin-top: 28px; height: 36px; }
+        .avatars-inline { display: inline-flex; align-items:center; }
+        .avatars-inline img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-left: -10px; box-shadow: 0 6px 12px rgba(0,0,0,0.22);}
+
+        .img-box { display:inline-block; border-radius:8px; overflow:hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+        .img-box img { width: 86px; height:46px; object-fit:cover; display:block; }
+
+        /* Overlap mask for the 304 column: white rounded container with inner thumbnails */
+            .img-box.overlap { position: absolute; top: 50%; left: -80px; transform: translateY(-50%); padding: ; border-radius: 8px; display: flex; align-items: center; gap: 0; rgba(0,0,0,0.36); z-index: 3; }
+        .img-box.overlap img { width: 50px; height: 46px; object-fit: cover; border-radius: 10px; margin-left: -10px; box-shadow: 0 6px 12px rgba(0,0,0,0.22); }
+        .img-box.overlap img:first-child { margin-left: 0; }
+
+        .h-line { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.15); top: 50%; transform: translateY(-50%); z-index: 1; }
+        .cross { position: absolute; right: 10%; top: 50%; width: 18px; height: 18px; border-left:1px solid rgba(255,255,255,0.2); border-top:1px solid rgba(255,255,255,0.2); transform: translateY(-50%); }
+
+        /* CTA section after numbers */
+        .cta-section { padding: 8rem 0; }
+        .cta-section .cta-wrap { display:flex; gap:12px; align-items:center; justify-content:center; }
+        .cta-section .btn-primary { background:#ff6a00; color:#fff; padding:14px 36px; border-radius:10px; font-weight:700; box-shadow:0 8px 24px rgba(255,106,0,0.18); border:none; cursor:pointer; }
+        .cta-section .cta-note { color:#cbd5e1; margin-left:12px; font-size:14px; display:flex; align-items:center; gap:8px; }
+
     </style>
 </head>
 
@@ -401,8 +435,89 @@
                 </div>
             </section>
 
-        </div>
-    </div>
+            <!-- Numbers & stats section (inserted after features-section1) -->
+            <section class="numbers-section px-6">
+                <div class="mx-auto numbers-container">
+                    <div class="numbers-row">
+                        <div class="numbers-col">
+                            <div class="num">2014</div>
+                            <div class="num-label">Year of establishment</div>
+                            <div class="num-sub">More than 10 years in the field</div>
+
+                            <div class="line-wrap">
+                                <div class="avatars-inline">
+                                    <img src="{{ asset('images/3 (1).png') }}" alt="a1">
+                                    <img src="{{ asset('images/2 (1).png') }}" alt="a2">
+                                    <img src="{{ asset('images/1 (1).png') }}" alt="a3">
+                                </div>
+                                <div class="h-line"></div>
+                                <div class="cross"></div>
+                            </div>
+                        </div>
+
+                        <div class="numbers-col">
+                            <div class="num">304</div>
+                            <div class="num-label">Projects are launched</div>
+                            <div class="num-sub">A lot of projects are done</div>
+
+                            <div class="line-wrap">
+                                <div class="img-box overlap">
+                                    <img src="{{ asset('images/3.png') }}" alt="thumb1">
+                                    <img src="{{ asset('images/2.png') }}" alt="thumb2">
+                                    <img src="{{ asset('images/1.png') }}" alt="thumb3">
+                                </div>
+                                <div class="h-line"></div>
+                                <div class="cross"></div>
+                            </div>
+                        </div>
+
+                        <div class="numbers-col">
+                            <div class="num">189</div>
+                            <div class="num-label">Clients are satisfied</div>
+                            <div class="num-sub">These people love us</div>
+
+                            <div class="line-wrap">
+                                <div class="avatars-inline">
+                                    <img src="{{ asset('images/3 (2).png') }}" alt="c1">
+                                    <img src="{{ asset('images/2 (2).png') }}" alt="c2">
+                                    <img src="{{ asset('images/1 (2).png') }}" alt="c2">
+                                </div>
+                                <div class="h-line"></div>
+                                <div class="cross"></div>
+                            </div>
+                        </div>
+
+                        <div class="numbers-col">
+                            <div class="num">12</div>
+                            <div class="num-label">Projects in work</div>
+                            <div class="num-sub">What we do right now</div>
+
+                            <div class="line-wrap">
+                                <div class="img-box overlap">
+                                    <img src="{{ asset('images/3 (3).png') }}" alt="thumb2">
+                                    <img src="{{ asset('images/2 (3).png') }}" alt="thumb2">
+                                    <img src="{{ asset('images/1.png') }}" alt="thumb2">
+
+                                </div>
+                                <div class="h-line"></div>
+                                <div class="cross"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <!-- CTA placed after numbers section (per request) -->
+            <section class="cta-section">
+                <div class="mx-auto hero-container">
+                    <div class="cta-wrap">
+                        <button class="btn-primary">Get Started →</button>
+                        <div class="cta-note">Slots are available <span style="width:8px;height:8px;background:#22c55e;border-radius:50%;display:inline-block;margin-left:6px;"></span></div>
+                    </div>
+                </div>
+            </section>
+
 
 </body>
 </html>
