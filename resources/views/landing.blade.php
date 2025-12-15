@@ -130,6 +130,63 @@
            
         }
 
+        /* Feature section styles */
+        .features-section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1.25rem;
+            align-items: start;
+        }
+
+        .feature-card {
+            position: relative;
+            background: linear-gradient(rgba(39, 40, 41, 0.7), rgba(0, 0, 0, 0), rgba(255, 60, 0, 0.5));
+           
+            padding: 1.5rem 1.75rem;
+            border-radius: 12px;
+            min-height: 150px;
+            min-width: 480px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+            overflow: visible;
+        }
+
+        .feature-card.large { min-height: 180px; }
+        .feature-card .title { font-size: 1.5rem; margin-top: 1rem; font-weight: 600; }
+        .feature-card .desc { color: #d1d5db; font-size: 0.95rem; line-height: 1.4; }
+
+        .feature-card .badge {
+            position: absolute;
+            right: 16px;
+            top: 12px;
+            width: 40px;
+            height: 40px;
+            rotate: -45deg;
+            background: linear-gradient(135deg,#ff6a00,#ff3b00);
+            border-radius: 999px;
+            display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+            box-shadow: 0 6px 18px rgba(255,106,0,0.18);
+            overflow: visible;
+        }
+
+        /* diagonal line under the circular badge */
+        /* .feature-card .badge::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 3px;
+            height: 84px;
+            background: linear-gradient(180deg, rgba(255,122,58,1), rgba(255,59,0,1));
+            transform: translateX(-50%) rotate(-32deg);
+            transform-origin: top center;
+            border-radius: 2px;
+            z-index: 0;
+        } */
+
+        /* Heading font and size for features */
+        .features-section h2 { font-size: 64px; line-height: 1; font-family: 'Sk-Modernist', Arial, Helvetica, sans-serif; }
+
     </style>
 </head>
 
@@ -255,6 +312,60 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Feature Section (matches provided design) -->
+            <section class="features-section px-6">
+                <div class="mx-auto hero-container">
+                    <div class="flex items-start justify-between gap-6">
+                        <div class="max-w-720px">
+                            <h2 class="text-xl font-bold leading-tight">
+                                Designed for Designers.<br>
+                                Powered by <span class="text-orange-500">AI.</span>
+                            </h2>
+                            <p class="text-gray-300 mt-4">Unlock the full potential of your creativity with our AI-powered design assistant. Explore new dimensions of design.</p>
+                        </div>
+
+                        <!-- vector logo (PNG placed in public/images). Replace filename if different. -->
+                        <div class="hidden md:flex items-center justify-center">
+                            <img src="{{ asset('images/Vector.png') }}" alt="Vector logo" style="width:180px;height:100px;object-fit:contain;" />
+                        </div>
+                    </div>
+
+                    <div class="mt-8 feature-grid">
+                        <div class="feature-card small">
+                            <div class="desc">Skip the blank canvas and spark creativity <br>
+                            instantly. Our AI generates high-quality, on-<br>
+                            brand design concepts within seconds</div>
+                            <div class="title">Instant Ideation</div>
+                            <div class="badge rotate-45">➜</div>
+                        </div>
+
+                        <div class="feature-card large">
+                            <div class="desc">No two creators are the same, and neither are their <br>
+                            styles. Our AI learns from your inputs, understands your<br>
+                             aesthetic preferences, and fine-tunes every design</div>
+                            <div class="title">Smart Adaptability</div>
+                            <div class="badge">➜</div>
+                        </div>
+
+                        <div class="feature-card large">
+                            <div class="desc">Design once, export anywhere. Whether you need high<br>
+                            -res graphics for print, responsive visuals for the web, <br>
+                            or mobile-optimized assets</div>
+                            <div class="title">Multi-Format Export</div>
+                            <div class="badge">➜</div>
+                        </div>
+
+                        <div class="feature-card small">
+                            <div class="desc">Say goodbye to repetitive tweaks <br>
+                            and endless back-and-forths. With intuitive<br>
+                             prompt-based editing</div>
+                            <div class="title">Seamless Revisions</div>
+                            <div class="badge">➜</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </div>
     </div>
