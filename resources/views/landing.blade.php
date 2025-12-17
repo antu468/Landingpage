@@ -246,6 +246,56 @@
         .cta-section .btn-primary { background:#ff6a00; color:#fff; padding:14px 36px; border-radius:10px; font-weight:700; box-shadow:0 8px 24px rgba(255,106,0,0.18); border:none; cursor:pointer; }
         .cta-section .cta-note { color:#cbd5e1; margin-left:12px; font-size:14px; display:flex; align-items:center; gap:8px; }
 
+
+
+        /* body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#000;
+            font-family: Arial, Helvetica, sans-serif;
+        } */
+
+        /* outer pill */
+        .toggle-wrapper{
+            background: #1c1f22;
+            padding:10px;
+            border-radius:333px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:45px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        /* button base */
+        .toggle-btn{
+            padding: 10px 28px;
+            border-radius: 999px;
+            font-size: 16px;
+            cursor: default;
+            user-select: none;
+            color: #9ca3af;
+            transition: all 0.25s ease;
+        }
+
+        /* active button */
+        .toggle-btn.active{
+            background: linear-gradient(
+                180deg,
+                rgba(255,255,255,0.15),
+                rgba(255,255,255,0.05)
+            );
+            color: #ffffff;
+            box-shadow:
+                0 6px 18px rgba(0,0,0,0.45),
+                inset 0 1px 0 rgba(255,255,255,0.18);
+        }
+
     </style>
 </head>
 
@@ -531,6 +581,15 @@
                     </div>
                 </div>
             </section>
+
+            <div class="toggle-wrapper">
+                <div class="toggle-btn active">Monthly</div>
+                <div class="toggle-btn">Yearly</div>
+            </div>
+        </div>
+    </div>
+
+
             
 
 
