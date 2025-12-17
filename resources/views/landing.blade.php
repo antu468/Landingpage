@@ -766,6 +766,16 @@
                 </div>
             </section>
 
+            <!-- Frequently ask question part -->
+             <section class="plans-header px-4">
+                <div class="mx-auto hero-container">
+                    <div class="max-w-2xl mx-auto text-center">
+                        <h2 style="color:#ffffff; font-size:48px; line-height:1; margin:0 0 16px; font-weight:700;">Frequently Asked<br> Questions</h2>
+                        <p style="color:#cbd5e1; font-size:16px; margin:0 auto; max-width:760px;">Got questions? We've got answers. Find everything you need to know about using our <br>platform, plans, and features.</p>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
 
