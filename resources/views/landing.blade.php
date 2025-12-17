@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Landing Page</title>
     @vite('resources/css/app.css') {{-- Tailwind --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <style>
         /* small helpers to better match the provided design */
@@ -398,8 +399,66 @@
             font-size:16px;
         }
 
+    
 
+
+
+        /* FAQ Wrapper */
+        .faq-container{
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        /* Single FAQ item */
+        .faq-item{
+            border-bottom: 1px solid rgba(255,255,255,0.25);
+        }
+
+        /* Hide checkbox */
+        .faq-item input{
+            display:none;
+        }
+
+        /* Question row */
+        .faq-question{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding: 26px 0;
+            cursor:pointer;
+            font-size:18px;
+            font-weight:500;
+        }
+
+        /* Arrow icon */
+        .faq-question span{
+            font-size:22px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Answer */
+        .faq-answer{
+            max-height:0;
+            overflow:hidden;
+            color:#cfcfcf;
+            font-size:15px;
+            line-height:1.6;
+            transition: max-height 0.4s ease;
+        }
+
+        /* Open state */
+        .faq-item input:checked ~ .faq-answer{
+            max-height:200px;
+            padding-bottom:20px;
+        }
+
+        .faq-item input:checked + label span{
+            transform: rotate(180deg);
+        }
     </style>
+
+    
 </head>
 
 <body class="bg-black text-white">
@@ -776,12 +835,74 @@
                 </div>
             </section>
 
+            <!-- FAQ -->
+             <div class="faq-container">
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1">
+                    <label class="faq-question" for="faq1">
+                        What is this platform used for?
+                        <span>⌄</span>
+                    </label>
+                    <div class="faq-answer">
+                        It's an AI-powered design assistant that helps you generate, customize,
+                        and export creative assets in seconds—whether for personal projects,
+                        brand work, or commercial use.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2">
+                    <label class="faq-question" for="faq2">
+                        What happens if I hit my free generation limit?
+                        <span>⌄</span>
+                    </label>
+                    <div class="faq-answer">
+                        You can upgrade to a paid plan to continue generating designs without limits.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq3">
+                    <label class="faq-question" for="faq3">
+                        Do I need design experience to use it?
+                        <span>⌄</span>
+                    </label>
+                    <div class="faq-answer">
+                        No design experience is required. The platform is built to be intuitive
+                        for beginners and powerful for professionals.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq4">
+                    <label class="faq-question" for="faq4">
+                        Can I collaborate with my team?
+                        <span>⌄</span>
+                    </label>
+                    <div class="faq-answer">
+                        Yes, team collaboration features are available on selected plans.
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq5">
+                    <label class="faq-question" for="faq5">
+                        Is it really free to use?
+                        <span>⌄</span>
+                    </label>
+                    <div class="faq-answer">
+                        Yes, a free plan is available with limited features.
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
     </div>
-
-
-            
-
-
 </body>
 </html>
