@@ -507,6 +507,9 @@
                 </div>
                 
             </section>
+            </section>
+
+            
 
             <!-- CTA placed after numbers section (per request) -->
             <section class="cta-section">
@@ -517,6 +520,18 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Paragraph intro added after numbers section -->
+            <!-- Plans heading added above the paragraph -->
+            <section class="plans-header px-4">
+                <div class="mx-auto hero-container">
+                    <div class="max-w-2xl mx-auto text-center">
+                        <h2 style="color:#ffffff; font-size:48px; line-height:1; margin:0 0 16px; font-weight:700;">Choose the Plan<br>That’s Right for You</h2>
+                        <p style="color:#cbd5e1; font-size:16px; margin:0 auto; max-width:760px;">Giving you access to essential features and over 1,000 creative tools. Upgrade to the<br> Pro Plan to unlock powerful AI capabilities, cloud syncing, and a whole new level of<br> creative freedom.</p>
+                    </div>
+                </div>
+            </section>
+            
 
 
 </body>
