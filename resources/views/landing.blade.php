@@ -296,6 +296,107 @@
                 inset 0 1px 0 rgba(255,255,255,0.18);
         }
 
+        /* frame creating */
+
+    body{
+        background:#000;
+        font-family: Arial, Helvetica, sans-serif;
+        color:#fff;
+    }
+
+    .pricing-section{
+        padding:100px 0;
+    }
+
+    .pricing-wrapper{
+        display:flex;
+        justify-content:center;
+        gap:32px;
+        align-items:flex-start;
+    }
+
+    .pricing-card{
+        background:#1b1d1f;
+        width:320px;
+        padding:32px;
+        border-radius:24px;
+        box-shadow:0 30px 60px rgba(0,0,0,0.6);
+        position:relative;
+    }
+
+    .side-card{
+        margin-top:40px; /* 👈 makes them lower */
+        z-index":1;
+    }
+
+    .pro-card{
+        transform: translateY(-40px); /* 👈 middle card up */
+        border:2px solid #ff6a2b;
+        z-index:10;
+    }
+
+    .pro-title{
+        color:#ff6a2b;
+    }
+
+    .desc{
+        color:#b5b5b5;
+        margin:12px 0 24px;
+        line-height:1.5;
+    }
+
+    .price{
+        font-size:36px;
+        font-weight:700;
+    }
+
+    .price span{
+        font-size:14px;
+        color:#aaa;
+    }
+
+    .badge{
+        background:#ff6a2b;
+        color:#fff;
+        font-size:12px;
+        padding:4px 10px;
+        border-radius:999px;
+        margin-left:8px;
+    }
+
+    hr{
+        border:none;
+        border-top:1px solid rgba(255,255,255,0.08);
+        margin:24px 0;
+    }
+
+    h4{
+        margin-bottom:16px;
+    }
+
+    ul{
+        list-style:none;
+        padding:0;
+        margin:0 0 32px;
+    }
+
+    ul li{
+        margin-bottom:12px;
+        color:#ddd;
+    }
+
+    .btn{
+        width:100%;
+        padding:14px;
+        border-radius:14px;
+        border:none;
+        cursor:pointer;
+        background:linear-gradient(180deg,#3a1f14,#1c0f0a);
+        color:#fff;
+        font-size:16px;
+    }
+
+
     </style>
 </head>
 
@@ -586,6 +687,83 @@
                 <div class="toggle-btn active">Monthly</div>
                 <div class="toggle-btn">Yearly</div>
             </div>
+
+
+
+            <section class="pricing-section">
+                <div class="pricing-wrapper">
+
+                    <!-- FREE -->
+                    <div class="pricing-card side-card">
+                        <h3>Free</h3>
+                        <p class="desc">Everything you need to supercharge your productivity.</p>
+
+                        <div class="price">$0 <span>/ month</span></div>
+
+                        <hr>
+
+                        <h4>What's included</h4>
+                        <ul>
+                            <li>20 design generations/month</li>
+                            <li>Low-res downloads</li>
+                            <li>Basic style presets</li>
+                            <li>Limited customization options</li>
+                        </ul>
+
+                        <button class="btn">Subscribe →</button>
+                    </div>
+
+                    <!-- PRO (UPPER) -->
+                    <div class="pricing-card pro-card">
+                            <h3 class="pro-title">Pro</h3>
+                            <p class="desc">Unlock a new level of your personal productivity.</p>
+
+                        <div class="price">
+                            $17 <span>/ month</span>
+                            <span class="badge">-20%</span>
+                        </div>
+
+                        <hr>
+
+                        <h4>What's included</h4>
+                        <ul>
+                            <li>Everything in Free</li>
+                            <li>Enigma AI</li>
+                            <li>Unlimited design generations</li>
+                            <li>Custom Themes</li>
+                            <li>High-resolution exports</li>
+                            <li>Custom Extensions</li>
+                            <li>Developer Tools</li>
+                        </ul>
+
+                        <button class="btn">Subscribe →</button>
+                    </div>
+
+                    <!-- TEAM -->
+                    <div class="pricing-card side-card">
+                        <h3>Team</h3>
+                        <p class="desc">Everything you need to supercharge your productivity.</p>
+
+                        <div class="price">
+                            $37 <span>/ month</span>
+                            <span class="badge">-20%</span>
+                        </div>
+
+                        <hr>
+
+                        <h4>What's included</h4>
+                        <ul>
+                            <li>Everything in Free</li>
+                            <li>Unlimited Shared Commands</li>
+                            <li>Unlimited Shared Quicklinks</li>
+                            <li>Priority support</li>
+                        </ul>       
+                        <button class="btn">Subscribe →</button>
+                    </div>
+
+                </div>
+            </section>
+
         </div>
     </div>
 
