@@ -212,12 +212,57 @@
         .img-box { display:inline-block; border-radius:8px; overflow:hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
         .img-box img { width: 86px; height:46px; object-fit:cover; display:block; }
 
-            .img-box.overlap { position: absolute; top: 50%; left: -80px; transform: translateY(-50%); padding: ; border-radius: 8px; display: flex; align-items: center; gap: 0; rgba(0,0,0,0.36); z-index: 3; }
+        .img-box.overlap { position: absolute; top: 50%; left: -80px; transform: translateY(-50%); padding: ; border-radius: 8px; display: flex; align-items: center; gap: 0; rgba(0,0,0,0.36); z-index: 3; }
         .img-box.overlap img { width: 50px; height: 46px; object-fit: cover; border-radius: 10px; margin-left: -10px; box-shadow: 0 6px 12px rgba(0,0,0,0.22); }
         .img-box.overlap img:first-child { margin-left: 0; }
 
         .h-line { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.15); top: 50%; transform: translateY(-50%); z-index: 1; }
-        .cross { position: absolute; right: 10%; top: 50%; width: 18px; height: 18px; border-left:1px solid rgba(255,255,255,0.2); border-top:1px solid rgba(255,255,255,0.2); transform: translateY(-50%); }
+        .cross { display: none; }
+        .decoration {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .decoration::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 6%;
+            bottom: 15%;
+            width: 1px;
+            background: rgba(255,255,255,50);
+            transform: translateX(-50%);
+        }
+        .decoration::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 12%;
+            right: 12%;
+            height: 1px;
+            background: rgba(255,255,255,50);
+            transform: translateY(-90%);
+        }
+
+        .decoration .chev {
+            position: relative;
+            z-index: 3;
+            color: rgba(255,255,255,0.95);
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 2px;
+            background: rgba(0,0,0,0.6);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
 
         .cta-section { padding: 8rem 0; }
         .cta-section .cta-wrap { display:flex; gap:12px; align-items:center; justify-content:center; }
@@ -593,7 +638,7 @@
                                     <img src="{{ asset('images/1 (1).png') }}" alt="a3">
                                 </div>
                                 <div class="h-line"></div>
-                                <div class="cross"></div>
+                                <div class="decoration"><span class="chev">&gt;&lt;</span></div>
                             </div>
                         </div>
 
@@ -609,7 +654,7 @@
                                     <img src="{{ asset('images/1.png') }}" alt="thumb3">
                                 </div>
                                 <div class="h-line"></div>
-                                <div class="cross"></div>
+                                <div class="decoration"><span class="chev">&gt;&lt;</span></div>
                             </div>
                         </div>
 
@@ -625,7 +670,7 @@
                                     <img src="{{ asset('images/1 (2).png') }}" alt="c2">
                                 </div>
                                 <div class="h-line"></div>
-                                <div class="cross"></div>
+                                <div class="decoration"><span class="chev">&gt;&lt;</span></div>
                             </div>
                         </div>
 
@@ -642,7 +687,7 @@
 
                                 </div>
                                 <div class="h-line"></div>
-                                <div class="cross"></div>
+                                <div class="decoration"><span class="chev">&gt;&lt;</span></div>
                             </div>
                         </div>
                     </div>
