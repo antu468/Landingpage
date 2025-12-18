@@ -456,6 +456,15 @@
         .faq-item input:checked + label span{
             transform: rotate(180deg);
         }
+        
+        /* Curved CTA (semicircle) */
+        .curved-cta { position: relative; margin: 48px 0; border-radius: 28px; overflow: hidden; }
+        .curved-cta .bg { position: absolute; left: 50%; top: -40%; width: 80%; height: 220%; transform: translateX(-50%); background: radial-gradient(ellipse at center top, rgba(255,106,0,0.95) 0%, rgba(62,18,18,0.9) 30%, rgba(12,12,12,0.95) 60%); filter: blur(0.4px); z-index: 0; }
+        .curved-cta .grid { position:; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 48px 48px; mix-blend-mode: overlay; opacity:0.18; z-index:1; }
+        .curved-cta .container { position: relative; z-index: 2; padding: 64px ; text-align: center; }
+        .curved-cta h2 { color: #fff; font-size: 48px; margin: 0 0 12px; font-weight:700; }
+        .curved-cta p { color: #f0f3f7; opacity:0.95; max-width: 900px; margin: 0 auto 22px; }
+        .curved-cta .cta-btn { display:inline-block; background: #ff6a00; color:#fff; padding:14px 28px; border-radius:10px; font-weight:700; box-shadow: 0 12px 40px rgba(255,106,0,0.16); text-decoration:none; }
     </style>
 
     
@@ -824,9 +833,8 @@
 
                 </div>
             </section>
-
             <!-- Frequently ask question part -->
-             <section class="plans-header px-4">
+            <section class="plans-header px-4">
                 <div class="mx-auto hero-container">
                     <div class="max-w-2xl mx-auto text-center">
                         <h2 style="color:#ffffff; font-size:48px; line-height:1; margin:0 0 16px; font-weight:700;">Frequently Asked<br> Questions</h2>
@@ -900,6 +908,17 @@
                 </div>
 
             </div>
+
+            <!-- Curved CTA section -->
+            <section class="curved-cta">
+                <div class="bg"></div>
+                <div class="grid"></div>
+                <div class="container">
+                    <h2>Ready to Design Smarter?</h2>
+                    <p>Whether you're a freelancer, a team, or a growing agency—our tools adapt to your workflow. Design faster. Deliver better.</p>
+                    <a class="cta-btn" href="#">Get Started →</a>
+                </div>
+            </section>
 
 
         </div>
