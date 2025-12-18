@@ -439,7 +439,7 @@
 
         /* right middle rectangle */
         .faq-deco.rm {
-            right: -510px;
+            right: -500px;
             top: 50%;
             transform: translateY(-50%);
             width: 423.22px;
