@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Landing Page</title>
     @vite('resources/css/app.css') {{-- Tailwind --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <style>
-        /* small helpers to better match the provided design */
+        
         .hero-container { max-width: 1100px; }
         .rating-bubble { backdrop-filter: blur(6px); }
         body {
@@ -34,7 +33,7 @@
         .stats-wrapper::after {
             content: "";
             display: block;
-            height: 0.5px;              /* use 0.5px if you want thinner */
+            height: 0.5px;              
             max-width: 1100px;
             margin: 0 auto;
             background: linear-gradient(
@@ -58,7 +57,7 @@
             top: 10%;
             height: 80%;
             width: 1px;
-            background: rgba(255,255,255,0.2); /* increased opacity so the thin line is visible */
+            background: rgba(255,255,255,0.2); 
         }
 
         .label {
@@ -73,7 +72,7 @@
             font-size: 42px;
             font-weight: bold;
         }
-            /*frame with rounded corners and gradient background for rating bubble*/
+            
         .rating-pill {
             display: inline-flex;
             align-items: center;
@@ -109,7 +108,7 @@
             white-space: nowrap;
         }
 
-        /* Navbar active underline */
+        
         .nav-item { position: relative; }
         .nav-item.active::after {
             content: "";
@@ -131,7 +130,7 @@
            
         }
 
-        /* Feature section styles */
+        
         .features-section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
         .feature-grid {
             display: grid;
@@ -170,25 +169,8 @@
             overflow: visible;
         }
 
-        /* diagonal line under the circular badge */
-        /* .feature-card .badge::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 100%;
-            width: 3px;
-            height: 84px;
-            background: linear-gradient(180deg, rgba(255,122,58,1), rgba(255,59,0,1));
-            transform: translateX(-50%) rotate(-32deg);
-            transform-origin: top center;
-            border-radius: 2px;
-            z-index: 0;
-        } */
-
-        /* Heading font and size for features */
         .features-section h2 { font-size: 64px; line-height: 1; font-family: 'Sk-Modernist', Arial, Helvetica, sans-serif; }
 
-        /* Paragraph below the feature containers */
         .features-section1 { position: relative; padding-top: 1.5rem; padding-bottom: 2rem; }
 
         .features-section1 .lead {
@@ -212,14 +194,11 @@
             color: #ffffff;
             opacity: 0.95;
         }
-
-        /* Numbers section styles */
         .numbers-section { padding-top: 2.5rem; padding-bottom: 3rem; }
         .numbers-container { max-width: 1200px; margin: 0 auto; }
         .numbers-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; align-items: start; }
 
         .numbers-col { position: relative; color: #fff; }
-        /* Alternate vertical positions: 1st top, 2nd down, 3rd top, 4th down */
         .numbers-row .numbers-col:nth-child(odd) { transform: translateY(0); }
         .numbers-row .numbers-col:nth-child(even) { transform: translateY(88px); }
         .numbers-col .num { font-size: 67.15px; font-weight: 700; line-height: 1; }
@@ -233,7 +212,6 @@
         .img-box { display:inline-block; border-radius:8px; overflow:hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
         .img-box img { width: 86px; height:46px; object-fit:cover; display:block; }
 
-        /* Overlap mask for the 304 column: white rounded container with inner thumbnails */
             .img-box.overlap { position: absolute; top: 50%; left: -80px; transform: translateY(-50%); padding: ; border-radius: 8px; display: flex; align-items: center; gap: 0; rgba(0,0,0,0.36); z-index: 3; }
         .img-box.overlap img { width: 50px; height: 46px; object-fit: cover; border-radius: 10px; margin-left: -10px; box-shadow: 0 6px 12px rgba(0,0,0,0.22); }
         .img-box.overlap img:first-child { margin-left: 0; }
@@ -241,25 +219,11 @@
         .h-line { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.15); top: 50%; transform: translateY(-50%); z-index: 1; }
         .cross { position: absolute; right: 10%; top: 50%; width: 18px; height: 18px; border-left:1px solid rgba(255,255,255,0.2); border-top:1px solid rgba(255,255,255,0.2); transform: translateY(-50%); }
 
-        /* CTA section after numbers */
         .cta-section { padding: 8rem 0; }
         .cta-section .cta-wrap { display:flex; gap:12px; align-items:center; justify-content:center; }
         .cta-section .btn-primary { background:#ff6a00; color:#fff; padding:14px 36px; border-radius:10px; font-weight:700; box-shadow:0 8px 24px rgba(255,106,0,0.18); border:none; cursor:pointer; }
         .cta-section .cta-note { color:#cbd5e1; margin-left:12px; font-size:14px; display:flex; align-items:center; gap:8px; }
 
-
-
-        /* body{
-            margin:0;
-            height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:#000;
-            font-family: Arial, Helvetica, sans-serif;
-        } */
-
-        /* outer pill */
         .toggle-wrapper{
             background: #1c1f22;
             padding:10px;
@@ -273,7 +237,6 @@
             width: fit-content;
         }
 
-        /* button base */
         .toggle-btn{
             padding: 10px 28px;
             border-radius: 999px;
@@ -284,7 +247,6 @@
             transition: all 0.25s ease;
         }
 
-        /* active button */
         .toggle-btn.active{
             background: linear-gradient(
                 180deg,
@@ -296,14 +258,6 @@
                 0 6px 18px rgba(0,0,0,0.45),
                 inset 0 1px 0 rgba(255,255,255,0.18);
         }
-
-        /* frame creating */
-
-        /* body{
-            background:#000;
-            font-family: Arial, Helvetica, sans-serif;
-            color:#fff;
-        } */
 
         .pricing-section{
             padding:100px 0;
@@ -329,7 +283,7 @@
         }
 
         .side-card{
-            margin-top:40px; /* 👈 makes them lower */
+            margin-top:40px; 
             z-index:1;
         }
 
@@ -399,28 +353,17 @@
             font-size:16px;
         }
 
-    
-
-
-
-        /* FAQ Wrapper */
         .faq-container{
             max-width: 1000px;
             margin: 80px auto;
             padding: 0 20px;
         }
-
-        /* Single FAQ item */
         .faq-item{
             border-bottom: 1px solid rgba(255,255,255,0.25);
         }
-
-        /* Hide checkbox */
         .faq-item input{
             display:none;
         }
-
-        /* Question row */
         .faq-question{
             display:flex;
             justify-content:space-between;
@@ -430,14 +373,10 @@
             font-size:18px;
             font-weight:500;
         }
-
-        /* Arrow icon */
         .faq-question span{
             font-size:22px;
             transition: transform 0.3s ease;
         }
-
-        /* Answer */
         .faq-answer{
             max-height:0;
             overflow:hidden;
@@ -446,8 +385,6 @@
             line-height:1.6;
             transition: max-height 0.4s ease;
         }
-
-        /* Open state */
         .faq-item input:checked ~ .faq-answer{
             max-height:200px;
             padding-bottom:20px;
@@ -457,7 +394,6 @@
             transform: rotate(180deg);
         }
         
-        /* Curved CTA (semicircle) */
         .curved-cta { position: relative; margin: 48px 0; border-radius: 28px; overflow: hidden; }
         .curved-cta .bg { position: absolute; left: 50%; top: -40%; width: 80%; height: 220%; transform: translateX(-50%); background: radial-gradient(ellipse at center top, rgba(255,106,0,0.95) 0%, rgba(62,18,18,0.9) 30%, rgba(12,12,12,0.95) 60%); filter: blur(0.4px); z-index: 0; }
         .curved-cta .grid { position:; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 48px 48px; mix-blend-mode: overlay; opacity:0.18; z-index:1; }
@@ -472,31 +408,22 @@
 
 <body class="bg-black text-white">
 
-    <!-- Background Wrapper -->
     <div class="relative min-h-screen overflow-hidden bg-black">
 
-        <!-- Base background canvas -->
+        
         <div class="absolute inset-0 bg-black" style="z-index:0"></div>
 
-        <!-- Left and right hero images (image 87 on left, image 85 on right) -->
+        
         <img src="{{ asset('images/image 87.png') }}" alt="hero-left" class="pointer-events-none absolute left-0 top-0 h-full max-w-[48%] object-cover opacity-90" style="z-index:5">
         <img src="{{ asset('images/image 85.png') }}" alt="hero-right" class="pointer-events-none absolute right-0 top-0 h-full max-w-[48%] object-cover opacity-90" style="z-index:5">
 
-        <!-- Stars / speck overlays (multiple layers for depth) -->
         <img src="{{ asset('images/image.png') }}" alt="stars-1" class="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-25" style="z-index:9">
         <img src="{{ asset('images/image (1).png') }}" alt="stars-2" class="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-20" style="z-index:9">
 
-        <!-- Decorative curve pieces (left / right) -->
-        <!-- <img src="{{ asset('images/Rounded rectangle (1).png') }}" alt="curve-left" class="pointer-events-none absolute left-0 top-1/4 w-40 md:w-72 opacity-95 -z-4 -translate-x-6">
-        <img src="{{ asset('images/Rounded rectangle.png') }}" alt="curve-right" class="pointer-events-none absolute right-0 bottom-1/6 w-40 md:w-96 opacity-95 -z-4 translate-x-6"> -->
-
-        <!-- Faint overlay to darken hero for readable text (below stars, above side images) -->
         <div class="absolute inset-0" style="background-color: rgba(0,0,0,0.28); z-index:8"></div>
 
-        <!-- Content -->
         <div class="relative z-10">
 
-            <!-- Navbar -->
             <nav class="px-6 py-6">
                 <div class="mx-auto hero-container flex items-center justify-between">
                     <img src="{{ asset('images/Logo (1).png') }}" alt="Logo" class="h-8">
@@ -514,11 +441,10 @@
                 </div>
             </nav>
 
-            <!-- Hero Section -->
             <section class="flex items-center min-h-[80vh] px-6">
                 <div class="mx-auto hero-container">
                     <div class="relative">
-                        <!-- small rating bubble over hero text -->
+                        
                         <div class="rating-pill">
                             <div class="avatars">
                                 <img src="images/Container (4).png" alt="client">
@@ -528,7 +454,6 @@
                                 <img src="images/Container.png" alt="client">
                             </div>
 
-                            <!-- Happy Clients Badge: stars above, text below -->
                             <div class="happy-badge">
                                 <div class="flex gap-1">
                                     @for ($i = 0; $i < 5; $i++)
@@ -540,7 +465,6 @@
                                     @endfor
                                 </div>
 
-                                <!-- Text directly under the stars -->
                                 <div class="text-sm font-medium text-orange-400">115+ happy clients</div>
                             </div>
 
@@ -572,8 +496,6 @@
                 </div>
             </section>
 
-
-            <!-- Bordered stats box under hero (centered, with vertical dividers) -->
             <div class="stats-wrapper">
                 <div class="stats">
                     <div class="stat">
@@ -593,7 +515,7 @@
                 </div>
             </div>
 
-            <!-- Feature Section (matches provided design) -->
+            
             <section class="features-section px-6">
                 <div class="mx-auto hero-container">
                     <div class="flex items-start justify-between gap-6">
@@ -606,7 +528,7 @@
                              Explore new dimensions of design.</p>
                         </div>
 
-                        <!-- vector logo (PNG placed in public/images). Replace filename if different. -->
+                        
                         <div class="hidden md:flex items-center justify-center">
                             <img src="{{ asset('images/Vector.png') }}" alt="Vector logo" style="width:180px;height:100px;object-fit:contain;" />
                         </div>
@@ -656,7 +578,6 @@
                 </div>
             </section>
 
-            <!-- Numbers & stats section (inserted after features-section1) -->
             <section class="numbers-section px-6">
                 <div class="mx-auto numbers-container">
                     <div class="numbers-row">
@@ -728,11 +649,7 @@
                 </div>
                 
             </section>
-            </section>
-
             
-
-            <!-- CTA placed after numbers section (per request) -->
             <section class="cta-section">
                 <div class="mx-auto hero-container">
                     <div class="cta-wrap">
@@ -742,8 +659,6 @@
                 </div>
             </section>
 
-            <!-- Paragraph intro added after numbers section -->
-            <!-- Plans heading added above the paragraph -->
             <section class="plans-header px-4">
                 <div class="mx-auto hero-container">
                     <div class="max-w-2xl mx-auto text-center">
@@ -758,12 +673,8 @@
                 <div class="toggle-btn">Yearly</div>
             </div>
 
-
-
             <section class="pricing-section">
                 <div class="pricing-wrapper">
-
-                    <!-- FREE -->
                     <div class="pricing-card side-card">
                         <h3>Free</h3>
                         <p class="desc">Everything you need to supercharge your productivity.</p>
@@ -783,7 +694,6 @@
                         <button class="btn">Subscribe →</button>
                     </div>
 
-                    <!-- PRO (UPPER) -->
                     <div class="pricing-card pro-card">
                             <h3 class="pro-title">Pro</h3>
                             <p class="desc">Unlock a new level of your personal productivity.</p>
@@ -809,7 +719,6 @@
                         <button class="btn">Subscribe →</button>
                     </div>
 
-                    <!-- TEAM -->
                     <div class="pricing-card side-card">
                         <h3>Team</h3>
                         <p class="desc">Everything you need to supercharge your productivity.</p>
@@ -833,7 +742,7 @@
 
                 </div>
             </section>
-            <!-- Frequently ask question part -->
+
             <section class="plans-header px-4">
                 <div class="mx-auto hero-container">
                     <div class="max-w-2xl mx-auto text-center">
@@ -843,8 +752,7 @@
                 </div>
             </section>
 
-            <!-- FAQ -->
-             <div class="faq-container">
+            <div class="faq-container">
                 <div class="faq-item">
                     <input type="checkbox" id="faq1">
                     <label class="faq-question" for="faq1">
@@ -858,7 +766,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
+                
                 <div class="faq-item">
                     <input type="checkbox" id="faq2">
                     <label class="faq-question" for="faq2">
@@ -870,7 +778,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ 3 -->
+                
                 <div class="faq-item">
                     <input type="checkbox" id="faq3">
                     <label class="faq-question" for="faq3">
@@ -883,7 +791,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ 4 -->
+                
                 <div class="faq-item">
                     <input type="checkbox" id="faq4">
                     <label class="faq-question" for="faq4">
@@ -895,7 +803,7 @@
                     </div>
                 </div>
 
-                <!-- FAQ 5 -->
+                
                 <div class="faq-item">
                     <input type="checkbox" id="faq5">
                     <label class="faq-question" for="faq5">
@@ -909,7 +817,7 @@
 
             </div>
 
-            <!-- Curved CTA section -->
+            
             <section class="curved-cta">
                 <div class="bg"></div>
                 <div class="grid"></div>
@@ -920,6 +828,51 @@
                 </div>
             </section>
 
+            
+            <footer style="color:#9ca3af; padding:60px 0;">
+                <div class="mx-auto hero-container" style="display:flex; gap:24px; align-items:flex-start; justify-content:space-between;">
+                    <div style="flex:1; max-width:360px;">
+                        <h1  style="height:36px; margin-bottom:18px; font-weight:bold;font-color:#fff;font-size: 32px;">About Us</h1>
+                        <p style="color:#cfcfcf; line-height:1.6;">We're a team of designers, engineers, and innovators building AI tools that empower anyone to turn imagination into stunning visuals—faster, smarter, and effortlessly.</p>
+                    </div>
+
+                    <div style="flex:0 0 160px;">
+                        <h4 style="color:#ff6a00; margin-bottom:12px;">Useful Links</h4>
+                        <ul style="list-style:none; padding:0; margin:0; color:#bfc7cb;">
+                            <li style="margin:8px 0;">About</li>
+                            <li style="margin:8px 0;">Services</li>
+                            <li style="margin:8px 0;">Team</li>
+                            <li style="margin:8px 0;">Prices</li>
+                        </ul>
+                    </div>
+
+                    <div style="flex:0 0 160px;">
+                        <h4 style="color:#ff6a00; margin-bottom:12px;">Help</h4>
+                        <ul style="list-style:none; padding:0; margin:0; color:#bfc7cb;">
+                            <li style="margin:8px 0;">Customer Support</li>
+                            <li style="margin:8px 0;">Terms &amp; Conditions</li>
+                            <li style="margin:8px 0;">Privacy Policy</li>
+                            <li style="margin:8px 0;">Contact Us</li>
+                        </ul>
+                    </div>
+
+                    <div style="flex:0 0 220px; text-align:right;">
+                        <h4 style="color:#ff6a00; margin-bottom:12px;">Connect With Us</h4>
+                        <div style="color:#bfc7cb; font-size:14px; line-height:1.6;">27 Division St, New York, NY 10002, USA<br>+123 324 2653<br>username@mail.com</div>
+                        <div style="margin-top:18px; display:flex; gap:10px; justify-content:flex-end;">
+                            <img src="{{ asset('images/facebook.png') }}" alt="fb" style="width:36px;height:36px;border-radius:999px;padding:6px;border:1px solid rgba(255,106,0,0.12);" />
+                            <img src="{{ asset('images/github.png') }}" alt="pt" style="width:36px;height:36px;border-radius:999px;padding:6px;border:1px solid rgba(255,106,0,0.12);" />
+                            <img src="{{ asset('images/twitter.png') }}" alt="tw" style="width:36px;height:36px;border-radius:999px;padding:6px;border:1px solid rgba(255,106,0,0.12);" />
+                            <img src="{{ asset('images/google.png') }}" alt="g" style="width:36px;height:36px;border-radius:999px;padding:6px;border:1px solid rgba(255,106,0,0.12);" />
+                        </div>
+                    </div>
+                </div>
+
+                <div style="max-width:1100px; margin:24px auto 0; border-top:1px solid rgba(255,255,255,0.06); padding-top:18px; display:flex; justify-content:space-between; align-items:center;">
+                    <div style="color:#8b9396;">© {{ date('Y') }} Your Company. All rights reserved.</div>
+                    
+                </div>
+            </footer>
 
         </div>
     </div>
