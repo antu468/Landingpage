@@ -399,9 +399,55 @@
         }
 
         .faq-container{
+            position: relative;
             max-width: 1000px;
             margin: 80px auto;
             padding: 0 20px;
+        }
+
+        /* FAQ decorative rectangles (use images from public/images exactly) */
+        .faq-deco {
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.95;
+        }
+
+        /* left top rectangle */
+        .faq-deco.lt {
+            left: -555px;
+            top: -300px;
+            width: 500px;
+            height: 226.26px;
+            radius: 117.24px
+            border: 23.45px
+            rotation: -90deg;
+            background: url('{{ asset("images/Rounded rectangle (1).png") }}') no-repeat center/contain;
+        }
+
+        /* left bottom rectangle */
+        .faq-deco.lb {
+            left: -500px;
+            bottom: -35px;
+            width: 423.22px;
+            height: 150px;
+            radius: 117.24px
+            border: 23.45px
+            rotation: -90deg;
+            background: url('{{ asset("images/Rounded rectangle.png") }}') no-repeat center/contain;
+        }
+
+        /* right middle rectangle */
+        .faq-deco.rm {
+            right: -510px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 423.22px;
+            height: 226.26px;
+            radius: 117.24px
+            border: 23.45px
+            rotation: -90deg;
+            background: url('{{ asset("images/Circle.png") }}') no-repeat center/contain;
         }
         .faq-item{
             border-bottom: 1px solid rgba(255,255,255,0.25);
@@ -798,6 +844,10 @@
             </section>
 
             <div class="faq-container">
+                <!-- Decorative rectangles: left-top, left-bottom, right-middle -->
+                <div class="faq-deco lt" aria-hidden="true"></div>
+                <div class="faq-deco lb" aria-hidden="true"></div>
+                <div class="faq-deco rm" aria-hidden="true"></div>
                 <div class="faq-item">
                     <input type="checkbox" id="faq1">
                     <label class="faq-question" for="faq1">
